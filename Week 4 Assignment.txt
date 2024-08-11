@@ -1,0 +1,25 @@
+﻿Week 4: Expense Tracker Management with Data Manipulation Language (DML)
+Questions (2 hours):
+1.1. Adding a New Expense
+INSERT INTO Expenses (amount, date, category)
+VALUES (50.00, '2024-08-11', 'Groceries');
+1.2. Updating an Expense
+UPDATE Expenses
+SET amount = 60.00, date = '2024-08-12', category = 'Entertainment'
+WHERE expense_id = 1;
+1.3. Simulating Data Deletion
+Step 1: Create a Copy of the Expenses Table
+CREATE TABLE Expenses_Copy AS
+SELECT * FROM Expenses;
+Step 2: Delete a Record from the Copy
+DELETE FROM Expenses_Copy
+WHERE expense_id = 1;
+Bonus Challenge: Handling NULL Values
+Checking for null values:
+SELECT *
+FROM Expenses
+WHERE amount IS NULL OR date IS NULL OR category IS NULL;
+Handling null values:
+UPDATE Expenses
+SET amount = 0
+WHERE amount IS NULL;
