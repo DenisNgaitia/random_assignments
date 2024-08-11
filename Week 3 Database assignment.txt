@@ -1,0 +1,16 @@
+﻿Week 3: Grouping Your Expenses for Smarter Spending
+Challenges:
+1.1. Total Spent per Category:
+SELECT category, SUM(amount) AS total_spent
+FROM Expenses
+GROUP BY category;
+1.2. Average Expense per Category
+SELECT category, AVG(amount) AS average_spent
+FROM Expenses
+GROUP BY category;
+Bonus Challenge: Top Spending Categories
+SELECT category, SUM(amount) AS total_spent
+FROM Expenses
+GROUP BY category
+ORDER BY total_spent DESC
+LIMIT 3;
