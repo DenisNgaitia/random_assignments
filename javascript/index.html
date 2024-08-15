@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <header>
+            <meta charset="UTF-8">
+            <meta name="description" content="This is an expense tracker">
+            <meta name="keywords" content="HTML, meta tag, metadata">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>ExpenseTracker</title>
+            <link rel="stylesheet" href="styles.css">
+            <script src="script.js" defer></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </header>
+    </head>
+    <body>
+        <div class="login-container">
+            <h1>Register!</h1>
+            <form id="registrationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="Confirm Password">Confirm Password:</label>
+                <input type="Confirm password" id="Confirm" name="Confirm password" required>
+        
+                <button type="submit" onclick="window.location.href='view_expense.html'">Sign up</button>
+            </form>
+            <div id="message" style="display: none;"></div>
+        </div>
+        <div class="chart-container">
+            <canvas id="myChart" width="400" height="200"></canvas>
+        </div>
+        <script>
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [{
+                        label: 'Expenses',
+                        data: [12, 19, 3, 5, 2, 3, 7],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
